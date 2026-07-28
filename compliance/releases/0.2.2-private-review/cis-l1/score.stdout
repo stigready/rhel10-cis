@@ -1,18 +1,22 @@
 {
-  "pass": 79,
-  "fail": 2,
+  "pass": 69,
+  "fail": 6,
   "other": 0,
-  "total_scored": 81,
-  "score": 97.53,
+  "total_scored": 75,
+  "score": 92.0,
   "min_score": 90.0,
   "meets_floor": true,
   "gate_pass": true,
   "enforce": true,
   "failures": [
+    "accounts_password_pam_modules_in_authselect_profile",
+    "accounts_umask_etc_bashrc",
+    "accounts_umask_etc_profile",
     "configure_custom_crypto_policy_cis",
+    "file_permissions_ungroupowned",
     "use_pam_wheel_group_for_su"
   ],
   "regressions": [],
   "baseline": null,
-  "openscap_line": "OpenSCAP: pass=79 fail=2 score=97.5% (target 90%)"
+  "openscap_line": "OpenSCAP: pass=69 fail=6 score=92.0% (target 90%)"
 }
