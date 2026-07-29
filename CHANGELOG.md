@@ -2,6 +2,23 @@
 
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.2.4-private-review] - 2026-07-29
+
+### Changed
+- StigForge export refresh for `rhel10_cis` at `0.2.4-private-review`.
+
+### Verified (OpenSCAP)
+
+- **`cis-l1`** — score **97.53%** (floor 90.0%) · gate **PASS** · evidence `20260729T100750Z`
+  - Remaining counted failures: `configure_custom_crypto_policy_cis, use_pam_wheel_group_for_su`
+- **`cis-l2`** — score **96.47%** (floor 90.0%) · gate **PASS** · evidence `20260729T101052Z`
+  - Remaining counted failures: `configure_custom_crypto_policy_cis, disable_weak_deps, use_pam_wheel_group_for_su`
+
+### Provenance
+
+- Factory pipeline: https://github.com/stigready/stigforge/actions/runs/30440754045
+- Factory commit: `c481b47d629f5bc2357a86a933aa6f94f5245fce`
+
 ## [0.2.3-private-review] - 2026-07-29
 
 ### Changed
