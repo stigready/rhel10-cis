@@ -1,0 +1,19 @@
+{
+  "pass": 82,
+  "fail": 3,
+  "other": 0,
+  "total_scored": 85,
+  "score": 96.47,
+  "min_score": 90.0,
+  "meets_floor": true,
+  "gate_pass": true,
+  "enforce": true,
+  "failures": [
+    "configure_custom_crypto_policy_cis",
+    "disable_weak_deps",
+    "use_pam_wheel_group_for_su"
+  ],
+  "regressions": [],
+  "baseline": null,
+  "openscap_line": "OpenSCAP: pass=82 fail=3 score=96.5% (target 90%)"
+}
