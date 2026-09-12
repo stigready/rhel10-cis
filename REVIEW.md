@@ -1,4 +1,4 @@
-# Review package — `rhel10_cis` v0.2.4
+# Review package — `rhel10_cis` v0.3.0
 
 Product owner review (Phase B/C pilot). **Not** a StigApplied cutover signal.
 
@@ -6,14 +6,26 @@ Product owner review (Phase B/C pilot). **Not** a StigApplied cutover signal.
 
 ### Profile `cis-l1`
 - **Score:** 97.53% (floor 90.0%) · gate **PASS**
-- **Evidence tested:** 20260729T224030Z
-- [evidence.json](compliance/releases/0.2.4/cis-l1/evidence.json) · [evidence-report.html](compliance/releases/0.2.4/cis-l1/evidence-report.html)
-- [score.json](compliance/releases/0.2.4/cis-l1/score.json) · [report.html](compliance/releases/0.2.4/cis-l1/report.html) · [poam.md](compliance/releases/0.2.4/cis-l1/poam.md)
+- **Evidence tested:** 20260912T122819Z
+- [evidence.json](compliance/releases/0.3.0/cis-l1/evidence.json) · [evidence-report.html](compliance/releases/0.3.0/cis-l1/evidence-report.html)
+- [score.json](compliance/releases/0.3.0/cis-l1/score.json) · [results.xml](compliance/releases/0.3.0/cis-l1/results.xml) · [poam.md](compliance/releases/0.3.0/cis-l1/poam.md)
 
 ### Profile `cis-l2`
-- **Score:** 96.47% (floor 90.0%) · gate **PASS**
-- **Evidence tested:** 20260729T224308Z
-- [evidence.json](compliance/releases/0.2.4/cis-l2/evidence.json) · [evidence-report.html](compliance/releases/0.2.4/cis-l2/evidence-report.html)
-- [score.json](compliance/releases/0.2.4/cis-l2/score.json) · [report.html](compliance/releases/0.2.4/cis-l2/report.html) · [poam.md](compliance/releases/0.2.4/cis-l2/poam.md)
+- **Score:** 97.65% (floor 90.0%) · gate **PASS**
+- **Evidence tested:** 20260912T123033Z
+- [evidence.json](compliance/releases/0.3.0/cis-l2/evidence.json) · [evidence-report.html](compliance/releases/0.3.0/cis-l2/evidence-report.html)
+- [score.json](compliance/releases/0.3.0/cis-l2/score.json) · [results.xml](compliance/releases/0.3.0/cis-l2/results.xml) · [poam.md](compliance/releases/0.3.0/cis-l2/poam.md)
 
-- CI pipeline: https://github.com/stigready/stigforge/actions/runs/30496236357
+### Profile `cis-ws-l1`
+- **Score:** 97.53% (floor 90.0%) · gate **PASS**
+- **Evidence tested:** 20260912T123151Z
+- [evidence.json](compliance/releases/0.3.0/cis-ws-l1/evidence.json) · [evidence-report.html](compliance/releases/0.3.0/cis-ws-l1/evidence-report.html)
+- [score.json](compliance/releases/0.3.0/cis-ws-l1/score.json) · [results.xml](compliance/releases/0.3.0/cis-ws-l1/results.xml) · [poam.md](compliance/releases/0.3.0/cis-ws-l1/poam.md)
+
+### Profile `cis-ws-l2`
+- **Score:** 97.62% (floor 90.0%) · gate **PASS**
+- **Evidence tested:** 20260912T123405Z
+- [evidence.json](compliance/releases/0.3.0/cis-ws-l2/evidence.json) · [evidence-report.html](compliance/releases/0.3.0/cis-ws-l2/evidence-report.html)
+- [score.json](compliance/releases/0.3.0/cis-ws-l2/score.json) · [results.xml](compliance/releases/0.3.0/cis-ws-l2/results.xml) · [poam.md](compliance/releases/0.3.0/cis-ws-l2/poam.md)
+
+- CI pipeline: https://github.com/stigready/stigforge/actions/runs/34693316989
