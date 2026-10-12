@@ -42,6 +42,7 @@ rhel10cis_accounts_user_interactive_home_directory_exists: true
 rhel10cis_aide_build_database: true
 rhel10cis_aide_check_audit_tools: true
 rhel10cis_aide_periodic_cron_checking: true
+rhel10cis_always: true
 rhel10cis_audit_rules_continue_loading: true
 rhel10cis_audit_rules_dac_modification_chmod: true
 rhel10cis_audit_rules_dac_modification_chown: true
@@ -143,6 +144,7 @@ rhel10cis_disable_host_auth: true
 rhel10cis_disable_users_coredumps: true
 rhel10cis_disable_weak_deps: true
 rhel10cis_ensure_gpgcheck_globally_activated: true
+rhel10cis_ensure_journald_and_rsyslog_not_active_together: true
 rhel10cis_ensure_pam_wheel_group_empty: true
 rhel10cis_ensure_redhat_gpgkey_installed: true
 rhel10cis_file_at_allow_exists: true
@@ -337,6 +339,7 @@ rhel10cis_sshd_disable_root_login: true
 rhel10cis_sshd_do_not_permit_user_env: true
 rhel10cis_sshd_enable_pam: true
 rhel10cis_sshd_enable_warning_banner_net: true
+rhel10cis_sshd_limit_user_access: true
 rhel10cis_sshd_set_idle_timeout: true
 rhel10cis_sshd_set_keepalive: true
 rhel10cis_sshd_set_login_grace_time: true
@@ -347,6 +350,7 @@ rhel10cis_sshd_set_maxstartups: true
 rhel10cis_sudo_add_use_pty: true
 rhel10cis_sudo_custom_logfile: true
 rhel10cis_sudo_remove_no_authenticate: true
+rhel10cis_sudo_require_reauthentication: true
 rhel10cis_sysctl_fs_protected_hardlinks: true
 rhel10cis_sysctl_fs_protected_symlinks: true
 rhel10cis_sysctl_fs_suid_dumpable: true
@@ -380,5 +384,6 @@ rhel10cis_sysctl_net_ipv6_conf_default_accept_ra: true
 rhel10cis_sysctl_net_ipv6_conf_default_accept_redirects: true
 rhel10cis_sysctl_net_ipv6_conf_default_accept_source_route: true
 rhel10cis_sysctl_net_ipv6_conf_default_forwarding: true
+rhel10cis_use_pam_wheel_group_for_su: true
 rhel10cis_wireless_disable_interfaces: true
 rhel10cis_xwayland_disabled: true
