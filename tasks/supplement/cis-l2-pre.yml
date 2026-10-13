@@ -1,0 +1,24 @@
+# StigForge-owned gap-fill: install the `audit-rules` package on EL10 before the audit_rules_* tasks.
+#
+# On EL10 (audit 4.0.x) /usr/lib/systemd/system/audit-rules.service ships in the separate
+# `audit-rules` subpackage, not in `audit`. The StigReady base image installs `audit` without it, so
+# the unit is absent. Two things then break: the SSG playbook's "Check the rules script being used"
+# task reads that unit's ExecStart to choose between augenrules and auditctl, and the OVAL
+# definitions audit_rules_augenrules / audit_rules_auditctl (which every audit_rules_* rule needs)
+# read the same file. With no unit both are false, so all 67 audit_rules_* rules fail even though
+# the rules are on disk (rhel-10:cis-l2 82.5%, rocky-10:cis-l2 82.3%, 2026-10-13; evidence:
+# "unit file present: False", audit units on disk = [auditd.service] only).
+# This is the real remediation (the package that provides the audit rules loader), run earlier.
+---
+- name: Install the audit-rules package (provides audit-rules.service on EL10)
+  ansible.builtin.package:
+    name: audit-rules
+    state: present
+  tags:
+  - package_audit_installed
+  - configure_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - stigforge_gapfill

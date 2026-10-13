@@ -15,6 +15,36 @@
   - stigforge
   - facts
 - block:
+  - name: Install the audit-rules package (provides audit-rules.service on EL10)
+    ansible.builtin.package:
+      name: audit-rules
+      state: present
+    tags:
+    - package_audit_installed
+    - configure_strategy
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - stigforge_gapfill
+  rescue:
+  - name: 'StigForge: continue after error in ''Install the audit-rules package (provides audit-rules.service on EL10)'' (OpenSCAP
+      is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Install the audit-rules package (provides audit-rules.service on EL10)'' raised an error (module
+        or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state
+        independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_audit_installed | default(true) | bool)
+- name: 'StigForge: refresh package facts after ''Install the audit-rules package (provides audit-rules.service on EL10)''
+    installed a package (stigforge#83)'
+  ansible.builtin.package_facts:
+    manager: auto
+  tags:
+  - medium_severity
+  - always
+  - stigforge
+  - facts
+- block:
   - name: Ensure aide is installed
     ansible.builtin.package:
       name: aide
