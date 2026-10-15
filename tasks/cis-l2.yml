@@ -33088,6 +33088,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveCountMax"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -33192,6 +33193,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveCountMax"| regex_escape }}\s+{{ var_sshd_set_keepalive }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -33269,6 +33271,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "ClientAliveCountMax"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -33371,6 +33374,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveInterval"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -33481,6 +33485,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveInterval"| regex_escape }}\s+{{ sshd_idle_timeout_value }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -33562,6 +33567,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "ClientAliveInterval"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -33668,6 +33674,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "HostbasedAuthentication"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -33770,6 +33777,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "HostbasedAuthentication"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -33845,6 +33853,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "HostbasedAuthentication"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -33945,6 +33954,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitEmptyPasswords"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -34051,6 +34061,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitEmptyPasswords"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -34129,6 +34140,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PermitEmptyPasswords"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -34231,6 +34243,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "DisableForwarding"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -34302,6 +34315,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "DisableForwarding"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -34357,6 +34371,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "DisableForwarding"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -34437,6 +34452,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "GSSAPIAuthentication"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -34526,6 +34542,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "GSSAPIAuthentication"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -34593,6 +34610,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "GSSAPIAuthentication"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -34685,6 +34703,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "IgnoreRhosts"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -34784,6 +34803,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "IgnoreRhosts"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -34857,6 +34877,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "IgnoreRhosts"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -34955,6 +34976,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitRootLogin"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -35068,6 +35090,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitRootLogin"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -35151,6 +35174,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PermitRootLogin"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -35259,6 +35283,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitUserEnvironment"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -35361,6 +35386,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitUserEnvironment"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -35436,6 +35462,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PermitUserEnvironment"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -35536,6 +35563,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "UsePAM"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -35616,6 +35644,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "UsePAM"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -35677,6 +35706,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "UsePAM"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -35763,6 +35793,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "Banner"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -35852,6 +35883,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "Banner"| regex_escape }}\s+/etc/issue.net$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -35919,6 +35951,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "Banner"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36011,6 +36044,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "LoginGraceTime"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36089,6 +36123,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "LoginGraceTime"| regex_escape }}\s+{{ var_sshd_set_login_grace_time }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36148,6 +36183,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "LoginGraceTime"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36232,6 +36268,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "LogLevel"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36325,6 +36362,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "LogLevel"| regex_escape }}\s+VERBOSE$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36394,6 +36432,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "LogLevel"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36488,6 +36527,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "MaxAuthTries"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36566,6 +36606,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "MaxAuthTries"| regex_escape }}\s+{{ sshd_max_auth_tries_value }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36625,6 +36666,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "MaxAuthTries"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36709,6 +36751,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "MaxSessions"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36786,6 +36829,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "MaxSessions"| regex_escape }}\s+{{ var_sshd_max_sessions }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36845,6 +36889,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "MaxSessions"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36929,6 +36974,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "MaxStartups"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -37007,6 +37053,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "MaxStartups"| regex_escape }}\s+{{ var_sshd_set_maxstartups }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -37066,6 +37113,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "MaxStartups"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
