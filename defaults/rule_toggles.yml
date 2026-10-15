@@ -261,7 +261,6 @@ rhel10cis_kernel_module_freevxfs_disabled: true
 rhel10cis_kernel_module_hfs_disabled: true
 rhel10cis_kernel_module_hfsplus_disabled: true
 rhel10cis_kernel_module_jffs2_disabled: true
-rhel10cis_kernel_module_overlayfs_disabled: true
 rhel10cis_kernel_module_rds_disabled: true
 rhel10cis_kernel_module_sctp_disabled: true
 rhel10cis_kernel_module_squashfs_disabled: true
