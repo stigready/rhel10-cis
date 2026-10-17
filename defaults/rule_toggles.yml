@@ -10,6 +10,7 @@ rhel10cis_accounts_minimum_age_login_defs: true
 rhel10cis_accounts_no_uid_except_zero: true
 rhel10cis_accounts_password_pam_dictcheck: true
 rhel10cis_accounts_password_pam_difok: true
+rhel10cis_accounts_password_pam_enforce_root: true
 rhel10cis_accounts_password_pam_maxrepeat: true
 rhel10cis_accounts_password_pam_maxsequence: true
 rhel10cis_accounts_password_pam_minclass: true
