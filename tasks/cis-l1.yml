@@ -35470,7 +35470,7 @@
         independently.'
 - block:
   - name: Product hardening | auditd must be running (a stopped auditd with immutable rules wedges every audited syscall)
-    when: '''audit'' in ansible_facts.packages'
+    when: '''audit-rules'' in ansible_facts.packages'
     ansible.builtin.command: auditctl -s
     register: stigforge_auditd_status
     changed_when: false

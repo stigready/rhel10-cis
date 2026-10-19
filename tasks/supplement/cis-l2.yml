@@ -290,8 +290,9 @@
   - no_reboot_needed
 
 - name: Product hardening | auditd must be running (a stopped auditd with immutable rules wedges every audited syscall)
-  # RHEL 10 CIS L1 does not install audit (rhel-10:cis-l1 leg b1a2dace6686: auditctl not found); only where auditd exists.
-  when: "'audit' in ansible_facts.packages"
+  # On EL10 auditctl ships in the separate audit-rules subpackage, which CIS L1 does not install even when audit is present
+  # (rhel-10:cis-l1 leg 72b2316e6e57, 2026-10-19: "[Errno 2] No such file or directory: b'auditctl'"). Guard on the binary's package.
+  when: "'audit-rules' in ansible_facts.packages"
   ansible.builtin.command: auditctl -s
   register: stigforge_auditd_status
   changed_when: false
