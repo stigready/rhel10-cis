@@ -1,14 +1,14 @@
 # Source: ComplianceAsCode/content (scap-security-guide) - BSD-3-Clause
 # Imported by StigForge; cloud-breaker tasks stripped per policy/cloud-ami.yml
 ---
-- name: 'StigForge: gather package facts before any rule reads them (stigforge#82)'
+- name: 'StigForge: gather package facts before any rule reads them'
   ansible.builtin.package_facts:
     manager: auto
   tags:
   - always
   - stigforge
   - facts
-- name: 'StigForge: gather service facts before any rule reads them (stigforge#82)'
+- name: 'StigForge: gather service facts before any rule reads them'
   ansible.builtin.service_facts: null
   tags:
   - always
@@ -36,7 +36,7 @@
         independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_audit_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Install the audit-rules package (provides audit-rules.service on EL10)''
-    installed a package (stigforge#83)'
+    installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -69,7 +69,7 @@
       msg: 'StigForge: ''Ensure aide is installed'' raised an error (module or templating) and was skipped; continuing so
         later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_aide_installed | default(true) | bool)
-- name: 'StigForge: refresh package facts after ''Ensure aide is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure aide is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -106,7 +106,7 @@
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_aide_build_database | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Build and Test AIDE Database - Ensure AIDE Is Installed'' installed a package
-    (stigforge#83)'
+'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -141,7 +141,7 @@
         templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_aide_check_audit_tools | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Configure AIDE to Verify the Audit Tools - Ensure AIDE is Installed'' installed
-    a package (stigforge#83)'
+    a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -177,7 +177,7 @@
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_aide_periodic_cron_checking | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Configure Periodic Execution of AIDE - Ensure AIDE is installed'' installed
-    a package (stigforge#83)'
+    a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -213,7 +213,7 @@
         was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_aide_periodic_cron_checking | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Configure Periodic Execution of AIDE - Install cron'' installed a package
-    (stigforge#83)'
+'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -270,7 +270,7 @@
       msg: 'StigForge: ''Ensure sudo is installed'' raised an error (module or templating) and was skipped; continuing so
         later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_sudo_installed | default(true) | bool)
-- name: 'StigForge: refresh package facts after ''Ensure sudo is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure sudo is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -300,7 +300,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure sequoia-sq is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-- name: 'StigForge: refresh package facts after ''Ensure sequoia-sq is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure sequoia-sq is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -329,7 +329,7 @@
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_pam_pwquality_installed | default(true) |
     bool)
-- name: 'StigForge: refresh package facts after ''Ensure libpwquality is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure libpwquality is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -356,7 +356,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure systemd-journal-remote is installed'' raised an error (module or templating) and was skipped;
         continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-- name: 'StigForge: refresh package facts after ''Ensure systemd-journal-remote is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure systemd-journal-remote is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -392,7 +392,7 @@
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_firewalld_loopback_traffic_trusted | default(true)
     | bool)
 - name: 'StigForge: refresh package facts after ''Configure Firewalld to Trust Loopback Traffic - Ensure firewalld Package
-    is Installed'' installed a package (stigforge#83)'
+    is Installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -436,7 +436,7 @@
         independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_wireless_disable_interfaces | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Deactivate Wireless Network Interfaces - Ensure NetworkManager is installed''
-    installed a package (stigforge#83)'
+    installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -466,7 +466,7 @@
       msg: 'StigForge: ''Ensure libselinux is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_libselinux_installed | default(true) | bool)
-- name: 'StigForge: refresh package facts after ''Ensure libselinux is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure libselinux is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -540,7 +540,7 @@
       msg: 'StigForge: ''Ensure cronie is installed'' raised an error (module or templating) and was skipped; continuing so
         later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_cron_installed | default(true) | bool)
-- name: 'StigForge: refresh package facts after ''Ensure cronie is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure cronie is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -766,7 +766,7 @@
       msg: 'StigForge: ''Ensure postfix is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_postfix_installed | default(true) | bool)
-- name: 'StigForge: refresh package facts after ''Ensure postfix is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure postfix is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -998,7 +998,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure audit-libs is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-- name: 'StigForge: refresh package facts after ''Ensure audit-libs is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure audit-libs is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:
@@ -1037,7 +1037,7 @@
       msg: 'StigForge: ''Ensure audit is installed'' raised an error (module or templating) and was skipped; continuing so
         later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (rhel10cis_package_audit_installed | default(true) | bool)
-- name: 'StigForge: refresh package facts after ''Ensure audit is installed'' installed a package (stigforge#83)'
+- name: 'StigForge: refresh package facts after ''Ensure audit is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
   tags:

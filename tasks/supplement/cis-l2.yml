@@ -57,11 +57,6 @@
   - medium_severity
   - no_reboot_needed
 
-# sshd_limit_user_access (cis, cis_server_l1). The rule is satisfied by exactly one of AllowUsers,
-# AllowGroups, DenyUsers or DenyGroups in sshd_config. A cloud image cannot know a site's user
-# policy, so this adds the one restriction that never affects a customer: root is denied by name
-# (root login is already off via PermitRootLogin no). Customers who want AllowGroups set it
-# themselves. Documented as a POA&M item (decision 0059 follow-up); NOT an exemption.
 - name: Limit sshd user access by denying root by name (sshd_limit_user_access)
   ansible.builtin.lineinfile:
     path: /etc/ssh/sshd_config
