@@ -1,0 +1,9 @@
+{
+  "role": "rhel10_cis",
+  "version": "0.3.49",
+  "matrix_status": "green",
+  "factory_commit": "1b21040a6c4c57e62c7228a850656c3be000cd70",
+  "content_digest": "96c94c72df2735165bc1fc33713ddbe6c945b9bb8ee15b5c744b4ef00343a3aa",
+  "container_verify": "removed-0017",
+  "compliance_evidence": "Not produced here. Container verify was removed because a container cannot evaluate most STIG rules; compliance evidence for this role comes from the StigReady AMI build that consumes it."
+}
